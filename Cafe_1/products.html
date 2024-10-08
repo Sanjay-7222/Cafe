@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eren's Cafe Products</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0" />
+    <link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: gainsboro;
+            overflow: auto;
+            background-position: center;
+            background-size: cover;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: gray;
+            height: 40px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            top: 0;
+            transition: 0.2s ease;
+        }
+
+       .navbar .logo {
+        font-size: 2.1rem;
+        font-weight: 600;
+        color: rgb(228, 81, 28);
+       }
+
+       .navbar .menu-links {
+        display: flex;
+        gap: 40px;
+        list-style-type: none;
+       }
+
+        header .navbar {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        .navbar a:hover {
+            color: rgb(228, 81, 28);
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 100px;
+            text-decoration: underline;
+        }
+
+    div.gallery {
+            margin: 20px;
+            border: 1px solid #777;
+            float: left;    
+            width: 20%;
+            border-radius: 6px;
+            
+        }
+
+        div.gallery:hover {
+            border: 1px solid rgb(228, 81, 28);
+            transform: scale(1.01);
+            box-shadow: 0 0px 5px 0px #292727;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: 180px;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+            }
+            #menu-btn {
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+        #close-menu-btn {
+            position: absolute;
+            display: none;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 900px) {
+        header {
+            padding: 10px 20px;
+        }
+
+        header.show-mobile-menu::before {
+            content: "";
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px);
+        }        
+        #close-menu-btn, #menu-btn {
+            display: block;
+        }
+        .navbar .menu-links {
+            position: fixed;
+            left: -260px;
+            top: 0;
+            flex-direction: column;
+            width: 260px;
+            height: 100vh;
+            background: white;
+            padding: 70px 40px 0;
+            transition: left 0.15s ease;
+        }
+        header.show-mobile-menu .navbar .menu-links {
+            left: 0;
+        }
+        .navbar a {
+            color: black;
+        } 
+        main {
+            display: flex;
+            flex-direction: column;
+            margin-left: 100px;
+            text-align: center;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="coffee.html" class="logo"><span style="color: white;">Eren's</span>   Cafe</a>
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-rounded">close</span>
+                <li><a href="coffee.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="home.html">About us</a></li>
+            </ul>
+            <span id="menu-btn" class="material-symbols-rounded">menu</span>
+        </nav>
+    </header>
+    <main>
+    <h2>Our Products</h2>
+    <div class="gallery">
+        <a href="./Images/download (2).jfif" target="_blank"></a>
+        <img src="./Images/download (2).jfif" alt="" width="600" height="400">
+        <div class="desc">Espresso</div>
+    </div> 
+    <div class="gallery">
+        <a href="./Images/download (3).jfif" target="_blank"></a>
+        <img src="./Images/download (3).jfif" alt="" width="600" height="400">
+        <div class="desc">Long Black</div>
+    </div> 
+    <div class="gallery">
+        <a href="./Images/download (4).jfif" target="_blank"></a>
+        <img src="./Images/download (4).jfif" alt="" width="600" height="400">
+        <div class="desc">Flat White</div>
+    </div> 
+    <div class="gallery">
+        <a href="./Images/download (5).jfif" target="_blank"></a>
+        <img src="./Images/download (5).jfif" alt="" width="600" height="400">
+        <div class="desc">Cappuccino</div>
+    </div> 
+    <div class="gallery">
+        <a href="./Images/download (6).jfif" target="_blank"></a>
+        <img src="./Images/download (6).jfif" alt="" width="600" height="400">
+        <div class="desc">Mocha</div>
+    </div> 
+    <div class="gallery">
+        <a href="./Images/download (7).jfif" target="_blank"></a>
+        <img src="./Images/download (7).jfif" alt="" width="600" height="400">
+        <div class="desc">Decaf</div>
+    </div> 
+    <div class="gallery">
+        <a href="./Images/download (8).jfif" target="_blank"></a>
+        <img src="./Images/download (8).jfif" alt="" width="600" height="400">
+        <div class="desc">Cafe' Latte</div>
+    </div> 
+    <div class="gallery">
+        <a href="./Images/download (9).jfif" target="_blank"></a>
+        <img src="./Images/download (9).jfif" alt="" width="600" height="400">
+        <div class="desc">Mug a Chino</div>
+    </div> 
+    <div class="gallery">
+        <a href="./Images/download (10).jfif" target="_blank"></a>
+        <img src="./Images/download (10).jfif" alt="" width="600" height="400">
+        <div class="desc">Hot Chocolate</div>
+    </div> 
+    <div class="gallery">
+        <a href="./Images/download (11).jfif" target="_blank"></a>
+        <img src="./Images/download (11).jfif" alt="" width="600" height="400">
+        <div class="desc">Iced Coffee</div>
+    </div> 
+    <div class="gallery">
+        <a href="./Images/download (12).jfif" target="_blank"></a>
+        <img src="./Images/download (12).jfif" alt="" width="600" height="400">
+        <div class="desc">Iced Chocolate</div>
+    </div>
+</main>
+    <script>
+        const header = document.querySelector("header");
+        const menuBtn = document.querySelector("#menu-btn");
+        const closeMenuBtn = document.querySelector("#close-menu-btn");
+
+        menuBtn.addEventListener("click", () => {
+            header.classList.toggle("show-mobile-menu");
+        })
+
+        closeMenuBtn.addEventListener("click", () => {
+            menuBtn.click();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eren's Cafe About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0" />
+     <link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: Georgia, 'Times New Roman', Times, serif;  
+        }
+        body {
+            background: url(./Images/contemporary-coffee-shop-with-modern-elegance-design-generative-ai.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            overflow: auto;
+        }
+        .rightcolumn {
+            width: 40%;
+            height: 89%;
+            float: left;
+            font-size: 2rem;
+            font-weight: 300;
+            color: white;
+            padding: 10px;
+            padding-left: 50px;
+            padding-right: 20px;
+            background-color: rgba(168, 44, 44, 0.603);
+            margin-top: 70px;
+            border: none;
+            border-radius: 10px;
+        }
+        .rightcolumn span {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-top: 200px;
+        }
+        .welcome {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-top: 2rem;
+        }
+        p {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-top: 30px;
+            line-height: 40px;
+            margin-bottom: 2rem;
+        }
+        .open {
+            font-size: 1.1rem;
+            font-weight: 800;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .time {
+            float: right;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 800;
+            margin-top: -40px;
+            margin-right: 80px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            top: 0;
+            transition: 0.2s ease;
+        }
+
+       .navbar .logo {
+        font-size: 2.1rem;
+        font-weight: 600;
+        color: rgb(228, 81, 28);
+       }
+
+       .navbar .menu-links {
+        display: flex;
+        gap: 40px;
+        list-style-type: none;
+       }
+
+        header .navbar {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        .navbar a:hover {
+            color: rgb(228, 81, 28);
+        }
+        .contact {
+            margin-top: 2rem;
+            font-family: sans-serif;
+            font-size: 1.3rem;
+        }
+        .contact i {
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+        #menu-btn {
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+        #close-menu-btn {
+            position: absolute;
+            display: none;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 900px) {
+        header {
+            padding: 10px 20px;
+        }
+
+        header.show-mobile-menu::before {
+            content: "";
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px);
+        }        
+        #close-menu-btn, #menu-btn {
+            display: block;
+        }
+        .navbar .menu-links {
+            position: fixed;
+            left: -260px;
+            top: 0;
+            flex-direction: column;
+            width: 260px;
+            height: 100vh;
+            background: white;
+            padding: 70px 40px 0;
+            transition: left 0.15s ease;
+        }
+        header.show-mobile-menu .navbar .menu-links {
+            left: 0;
+        }
+        .navbar a {
+            color: black;
+        } 
+        .rightcolumn {
+            margin-left: 100px;
+            text-align: center;
+            font-size: 1rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="coffee.html" class="logo"><span style="color: white;">Eren's</span>   Cafe</a>
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-rounded">close</span>
+                <li><a href="coffee.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="home.html">About us</a></li>
+            </ul>
+            <span id="menu-btn" class="material-symbols-rounded">menu</span>
+        </nav>
+    </header>
+    <div class="rightcolumn">
+        <div class="welcome">Welcome To <br>Our Cafe</div>
+        <p>Coffee is a popular and beloved beverage enjoyed by people around the world. Awaken your 
+            senses with a steaming cup of liquid motivation. Love at First Sip, Good to the Last Sip.</p>
+            <div class="open">We Are Open <br>7 Days A Week</div>
+            <div class="time">8AM - 9PM</div>
+            <div class="contact">
+                <i class="fa-brands fa-whatsapp"></i>+91 9876543210 <br>
+                <i class="fa-brands fa-instagram"></i>Eren's_Cafe_024 
+            </div>
+    </div>
+    <script>
+        const header = document.querySelector("header");
+        const menuBtn = document.querySelector("#menu-btn");
+        const closeMenuBtn = document.querySelector("#close-menu-btn");
+
+        menuBtn.addEventListener("click", () => {
+            header.classList.toggle("show-mobile-menu");
+        })
+
+        closeMenuBtn.addEventListener("click", () => {
+            menuBtn.click();
+        })
+    </script>
+</body>
+</html>

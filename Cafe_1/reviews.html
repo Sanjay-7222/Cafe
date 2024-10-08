@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eren's Cafe Reviews</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0" />
+     <link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
+     <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #090921;
+            overflow: auto;
+            background-position: center;
+            background-size: cover;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            height: 40px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            top: 0;
+            transition: 0.2s ease;
+        }
+
+       .navbar .logo {
+        font-size: 2.1rem;
+        font-weight: 600;
+        color: rgb(228, 81, 28);
+       }
+
+       .navbar .menu-links {
+        display: flex;
+        gap: 40px;
+        list-style-type: none;
+       }
+
+        header .navbar {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        .navbar a:hover {
+            color: rgb(228, 81, 28);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .reviewSection {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .reviewItem {
+            width: 300px;
+            padding: 10px;
+            margin: 1rem;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: #10102a;
+            border: 1px solid #10102a;
+            transition: all .2s linear;
+            height: 300px;
+        }
+
+        .reviewItem:hover {
+            border-color: aqua;
+            transform: scale(1.01);
+            background-color: #090921;
+            box-shadow: 0 0px 5px 0px #cbc0c0;
+        }
+
+        .top {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .top ul li {
+            padding-left: 4px;
+        }
+
+        article p {
+            font-size: 15px;
+            font-weight: 100;
+            margin-bottom: 1rem;
+            font-family: sans-serif;
+        }
+
+        .clientImage {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .clientImage span {
+            margin-left: 10px;
+        }
+
+        .clientImage img {
+            width: 40px;
+        }
+
+        #menu-btn {
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+        #close-menu-btn {
+            position: absolute;
+            display: none;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 900px) {
+        header {
+            padding: 10px 20px;
+        }
+
+        header.show-mobile-menu::before {
+            content: "";
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px);
+        }        
+        #close-menu-btn, #menu-btn {
+            display: block;
+        }
+        .navbar .menu-links {
+            position: fixed;
+            left: -260px;
+            top: 0;
+            flex-direction: column;
+            width: 260px;
+            height: 100vh;
+            background: white;
+            padding: 70px 40px 0;
+            transition: left 0.15s ease;
+        }
+        header.show-mobile-menu .navbar .menu-links {
+            left: 0;
+        }
+        .navbar a {
+            color: black;
+        } 
+        .reviewSection {
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            display: block;
+        }
+    }
+
+     </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="coffee.html" class="logo"><span style="color: white;">Eren's</span>   Cafe</a>
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-rounded">close</span>
+                <li><a href="coffee.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="home.html">About us</a></li>
+            </ul>
+            <span id="menu-btn" class="material-symbols-rounded">menu</span>
+        </nav>
+    </header>
+    <h1>Our Happy Customers</h1>
+    <div class="reviewSection">
+        <div class="reviewItem">
+           <div class="top">
+                <div class="clientImage">
+                    <img src="./Images/download (13).jfif" alt="">
+                        <span>Raju Sheoran</span>
+                </div>
+                    <ul>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-solid fa-star"></i></li>
+                        <li><i class="fa-regular fa-star"></i></li>
+                        <li><i class="fa-regular fa-star"></i></li>
+                    </ul>
+            </div>
+                <article>
+                    <p class="review">Good Food, Great Service and Amazing Staff,
+                        A really Lovely Experience
+                        Eren's Cafe is always worth a Visit No Doubt.I m just glad that i visited Eren's cafe..
+                        i was just shocked to see the service so amazing it was..they take care of each and 
+                        every guest nd the food was very delicious..i just enjoyed the sunday brunch..feeling 
+                        very glad just keep it up guys.
+                    </p>
+                    <p>Jan 01, 2024</p>
+                </article>
+        </div>
+            <div class="reviewItem">
+                <div class="top">
+                     <div class="clientImage">
+                         <img src="./Images/download (15).jfif" alt="">
+                             <span>Kimiko</span>
+                         </div>
+                         <ul>
+                             <li><i class="fa-solid fa-star"></i></li>
+                             <li><i class="fa-solid fa-star"></i></li>
+                             <li><i class="fa-solid fa-star"></i></li>
+                             <li><i class="fa-solid fa-star"></i></li>
+                             <li><i class="fa-regular fa-star"></i></li>
+                         </ul>
+                     </div>
+                     <article>
+                         <p class="review">This cafe is huge and the ambience is vibrant. The food was good 
+                            and the service thoughtful and prompt. I guess the action that made my view about 
+                            the experience so delightful is that one of my family members was fasting which 
+                            the lady manager noticed and got him a platter of fruits. The gesture was much 
+                            appreciated. And it was a great evening spent. Thank you Eren's Cafe.
+                            </p>
+                         <p>Mar 21, 2024</p>
+                     </article>
+                 </div>
+                 <div class="reviewItem">
+                    <div class="top">
+                         <div class="clientImage">
+                             <img src="./Images/download (14).jfif" alt="">
+                                 <span>Annie January</span>
+                             </div>
+                             <ul>
+                                 <li><i class="fa-solid fa-star"></i></li>
+                                 <li><i class="fa-solid fa-star"></i></li>
+                                 <li><i class="fa-solid fa-star"></i></li>
+                                 <li><i class="fa-solid fa-star"></i></li>
+                                 <li><i class="fa-solid fa-star"></i></li>
+                             </ul>
+                         </div>
+                         <article>
+                             <p class="review">I m really happy to visit here this place is really amazing
+                                staff over here is very polite and cute enough talking about food it's 
+                                delicious
+                                and ambience is beautiful n comfortable
+                                there is no place like this anywer else where we can have fun n best food n 
+                                staff is really the best..... service provided here is very fast ❤️❤️❤️❤️❤️
+                                😇 cheers to Eren's the heart of jw Marriott.
+                                </p>
+                             <p>Apr 08, 2024</p>
+                         </article>
+                     </div>
+                     <script>
+                        const header = document.querySelector("header");
+                        const menuBtn = document.querySelector("#menu-btn");
+                        const closeMenuBtn = document.querySelector("#close-menu-btn");
+                
+                        menuBtn.addEventListener("click", () => {
+                            header.classList.toggle("show-mobile-menu");
+                        })
+                
+                        closeMenuBtn.addEventListener("click", () => {
+                            menuBtn.click();
+                        })
+                    </script>
+</body>
+</html>
