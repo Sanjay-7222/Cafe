@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0" />
+    <link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        body {
+            background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(./Images/9698231.jpg);
+            height: 100vh;
+            overflow: auto;
+            background-position: center;
+            background-size: cover;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 50px 0;
+            font-weight: bold;
+            background-color: rgb(228, 81, 28, 0.6);
+            color: white;
+            width: fit-content;
+            margin-left: 45%;
+        }
+
+        form.menu {
+            border: none;
+            border-radius: 6px;
+            width: 30%;
+            background-color: rgba(255, 255, 255, 0.815);
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        form.menu label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        form.menu input[type="text"],
+        form.menu input[type="tel"],
+        form.menu textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        form.menu textarea {
+            height: 100px;
+        }
+
+        form.menu button {
+            background-color: rgb(228, 81, 28);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        form.menu button:hover {
+            background-color: black;
+        }
+
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            top: 0;
+            transition: 0.2s ease;
+        }
+
+       .navbar .logo {
+        font-size: 2.1rem;
+        font-weight: 600;
+        color: rgb(228, 81, 28);
+       }
+
+       .navbar .menu-links {
+        display: flex;
+        gap: 40px;
+        list-style-type: none;
+       }
+
+        header .navbar {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        .navbar a:hover {
+            color: rgb(228, 81, 28);
+        }
+
+        #menu-btn {
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+        #close-menu-btn {
+            position: absolute;
+            display: none;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 900px) {
+        header {
+            padding: 10px 20px;
+        }
+
+        header.show-mobile-menu::before {
+            content: "";
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px);
+        }        
+        #close-menu-btn, #menu-btn {
+            display: block;
+        }
+        .navbar .menu-links {
+            position: fixed;
+            left: -260px;
+            top: 0;
+            flex-direction: column;
+            width: 260px;
+            height: 100vh;
+            background: white;
+            padding: 70px 40px 0;
+            transition: left 0.15s ease;
+        }
+        header.show-mobile-menu .navbar .menu-links {
+            left: 0;
+        }
+        .navbar a {
+            color: black;
+        } 
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><span style="color: white;">Eren's</span>   Cafe</a>
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-rounded">close</span>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="About.html">About us</a></li>
+            </ul>
+            <span id="menu-btn" class="material-symbols-rounded">menu</span>
+        </nav>
+    </header>
+
+    <h1>Checkout</h1>
+    <form id="checkout" class="menu">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="from_name" required>
+        <label for="phone number">Phone Number: </label>
+        <input type="tel" name="phone_number" required id="phone">
+        <label for="address">Address: </label>
+        <textarea name="Customer_Address" required id="address"></textarea>
+        <input type="hidden" name="order_summary" id="order_summary">
+        <button type="submit" id="checkout-btn">Place Order</button>
+    </form>
+    <script>
+        const header = document.querySelector("header");
+    const menuBtn = document.querySelector("#menu-btn");
+    const closeMenuBtn = document.querySelector("#close-menu-btn");
+
+    menuBtn.addEventListener("click", () => {
+        header.classList.toggle("show-mobile-menu");
+    })
+
+    closeMenuBtn.addEventListener("click", () => {
+        menuBtn.click();
+    })
+    </script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+     emailjs.init("5SRJHAAJDxXjcbD5T");
+
+    document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('checkout').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const orderSummary = localStorage.getItem('orderSummary');
+        const parsedOrderSummary = JSON.parse(orderSummary);
+        
+        document.getElementById('order_summary').value = JSON.stringify(parsedOrderSummary);
+
+        emailjs.sendForm('service_709qkr4', 'template_mow2fxs', this)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                
+
+                localStorage.removeItem('orderSummary');
+
+                window.location.href = 'thankyou.html';
+
+                    
+                },function(error) {
+                        console.error('FAILED...',error);
+                        window.location.href = 'Failed.html';
+                    })
+                
+            })
+        })
+    </script>
+</body>
+</html>
